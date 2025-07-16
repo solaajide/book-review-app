@@ -1,0 +1,10 @@
+{% extends 'flash_base.html' %}
+
+{% block body %}
+<form method="POST">
+    <input type="text" name="title" placeholder="Title" required><br><br>
+    <input type="text" name="author" placeholder="Author" required><br><br>
+    <textarea name="review" id="" placeholder="Write your review" required></textarea><br><br>
+    <button type="submit">Add book</button>
+</form>
+{% endblock %}

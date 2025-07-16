@@ -1,0 +1,18 @@
+{% extends 'flash_base.html' %}
+
+
+{% block body %}
+<h2>Welcome, {{ user.username }}</h2><hr>
+{% if books %}
+{% for book in books %}
+<h2>{{ book.title }}</h2>
+<p><b>Author: </b>{{ book.author }}</p>
+<p><b>Review: </b>{{ book.review }}</p>
+<a href="{{ url_for('main.edit_book', id=book.id) }}">Edit</a>
+<a href="{{ url_for('main.delete_book', id=book.id) }}">Delete</a>
+<hr>
+{% endfor %}
+{% else %}
+<h2>No Book Review - Add One</h2>
+{% endif %}
+{% endblock %}
